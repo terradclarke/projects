@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="antialiased">
+<%= render "shared/flash_notice" %>
+  <%= render "shared/head" %>
+
+  <body>
+    
+
+    <div class="container">
+    
+    </div>
+    <main>
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+  </body>
+</html>

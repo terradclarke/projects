@@ -1,0 +1,39 @@
+<div id="home-page-nav">
+
+<div>Presenting:</div>
+<p data-item='Codal'>Codal</p>
+
+<section>
+  <div>Schedule, Prepare, Motivate</div>
+  <nav>
+    <div class="container">
+  <div class="interior">
+  <% if !user_signed_in? %>
+    <a class="btn" href="#open-modal">👋 login/Register</a>
+  <% end %>
+  <% if user_signed_in? %>
+  <a class="btn" href="#open-modal">👋 Sign out/edit</a>
+  <% end %>
+  </div>
+</div>
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <h1></h1>
+    <div>
+        <% if !user_signed_in? %>
+        <%= link_to "Login", new_user_session_path, class: 'link' %>
+        <%= link_to "Sign Up", new_user_registration_path, class: 'link' %>
+        <% end %>
+        <% if user_signed_in? %>
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'link' %>
+        <%= link_to "Edit user", edit_user_registration_path, class: 'link' %>
+        <%= link_to "Appointments", appointments_path, class: 'link' %>
+    <% end %>
+    </div>
+    <div><small></small></div>
+    <a href="https://aminoeditor.com" target="_blank"></div>
+    </div>
+</div>
+
+</div>
