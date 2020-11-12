@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :affirmations
+  resources :lists
   devise_for :users
   resources :appointments
   root to: 'home#index'
